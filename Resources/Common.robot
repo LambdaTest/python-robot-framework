@@ -4,18 +4,11 @@ Library  LambdaTestStatus.py
 
 *** Variables ***
 
-@{_tmp}
-    ...  browserName: ${browserName},
-    ...  platform: ${platform},
-    ...  version: ${version},
-    ...  visual: ${visual},
-    ...  network: ${network},
-    ...  console: ${console},
-    ...  name: RobotFramework Lambda Test
 
 ${BROWSER}          ${ROBOT_BROWSER}
-${CAPABILITIES}     ${EMPTY.join(${_tmp})} 
-${REMOTE_URL}       https://%{LT_USERNAME}:%{LT_ACCESS_KEY}@hub.lambdatest.com/wd/hub
+&{options}          browserName=${browserName}     platform=${platform}       version=${version}        visual=${visual}       network=${network}        console=${console}      name=RobotFramework Lambda Test
+&{CAPABILITIES}     LT:Options=&{options}
+${REMOTE_URL}       http://%{LT_USERNAME}:%{LT_ACCESS_KEY}@hub.lambdatest.com/wd/hub
 ${TIMEOUT}          3000
 
 *** Keywords ***
@@ -29,6 +22,6 @@ Open test browser
 Close test browser
     Run keyword if  '${REMOTE_URL}' != ''
     ...  Report Lambdatest Status
-    ...  ${TEST_NAME} 
-    ...  ${TEST_STATUS} 
+    ...  ${TEST_NAME}
+    ...  ${TEST_STATUS}
     Close all browsers
