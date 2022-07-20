@@ -1,23 +1,58 @@
 # Robot Selenium tutorial
 
-![LambdaTest Logo](https://www.lambdatest.com/static/images/logo.svg)
+![LambdaTest Logo](https://www.lambdatest.com/resources/images/logos/logo.svg)
 
 
 ![altext](https://github.com/LambdaTest/Robot-Selenium-Sample/blob/master/tutorial-images/logo.PNG)
 
 Robot Framework is a generic open source automation framework. It can be used for test automation and robotic process automation (RPA).
+
 ## Prerequisites for Robot Selenium tutorial 
 
-You can find your username and access key here (https://www.lambdatest.com/capabilities-generator/).
+* Install the latest Python build from the [official website](https://www.python.org/downloads/). We recommend using the latest version.
+* Make sure **pip** is installed in your system. You can install **pip** from [here](https://pip.pypa.io/en/stable/installation/).
+* Download the latest **Selenium Client** and its **WebDriver bindings** from the [official website](https://www.selenium.dev/downloads/). Latest versions of **Selenium Client** and **WebDriver** are ideal for running your automation script on LambdaTest Selenium cloud grid.
+* Install **virtualenv** which is the recommended way to run your tests. It will isolate the build from other setups you may have running and ensure that the tests run with the specified versions of the modules.
 
-![Username Access](tutorial-images/capability.png)
-
-
-You can now replace the username and access key here in the `Resources/Common.robot` file: 
-
+```bash
+pip install virtualenv
 ```
-http://%{LT_USERNAME}:%{LT_ACCESS_KEY}@hub.lambdatest.com/wd/hub
+### Installing Selenium Dependencies And Tutorial Repo
+
+**Step 1:** Clone the LambdaTest’s python-robot-framework repository and navigate to the code directory as shown below:
+```bash
+git clone https://github.com/LambdaTest/python-robot-framework
+cd python-robot-framework
 ```
+**Step 2:** Create a virtual environment in your project folder the environment name is arbitrary.
+```bash
+virtualenv venv
+```
+**Step 3:** Activate the environment.
+```bash
+source venv/bin/activate
+```
+**Step 4:** Install the [required packages](https://github.com/LambdaTest/python-robot-framework/blob/master/requirements.txt) from the cloned project directory:
+```bash
+pip install -r requirements.txt
+```
+
+### Setting Up Your Authentication
+
+Make sure you have your LambdaTest credentials with you to run test automation scripts. You can get these credentials from the [LambdaTest Automation Dashboard](https://automation.lambdatest.com/build/?utm_source=github&utm_medium=repo&utm_campaign=pytest-selenium-sample) or by your [LambdaTest Profile](https://accounts.lambdatest.com/login/?utm_source=github&utm_medium=repo&utm_campaign=pytest-selenium-sample).
+
+**Step 5:** Set LambdaTest **Username** and **Access Key** in environment variables.
+
+* For **Linux/macOS**:
+  
+  ```bash
+  export LT_USERNAME="YOUR_USERNAME" 
+  export LT_ACCESS_KEY="YOUR ACCESS KEY"
+  ```
+  * For **Windows**:
+  ```bash
+  set LT_USERNAME="YOUR_USERNAME" 
+  set LT_ACCESS_KEY="YOUR ACCESS KEY"
 
 ## Getting Started With Robot & LambdaTest
 
