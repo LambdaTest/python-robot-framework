@@ -7,7 +7,7 @@ test_Windows_10_edge:
 
 
 test_OX_X_10_11_firefox:
-	robot --variable platform:"macOS Sierra" --variable browserName:firefox --variable version:latest --variable ROBOT_BROWSER:firefox --variable visual:false --variable network:false --variable console:false --log NONE --report NONE --output NONE Tests/sample_test.robot
+	robot --variable platform:"macOS Sonoma" --variable browserName:firefox --variable version:latest --variable ROBOT_BROWSER:firefox --variable visual:false --variable network:false --variable console:false --log NONE --report NONE --output NONE Tests/sample_test.robot
 
 
 test_Windows_10_chrome:
